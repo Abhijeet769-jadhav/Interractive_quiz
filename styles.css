@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(270deg, #84fab0, #8fd3f4, #8e44ad, #f39c12);
+    background-size: 800% 800%;
+    animation: gradientMove 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.tab-container {
+    max-width: 600px;
+    width: 100%;
+}
+
+.tab {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: none;
+    position: relative;
+}
+
+.tab h1 {
+    text-align: center;
+}
+
+.tab p {
+    text-align: center;
+}
+
+#start-quiz, #submit {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#start-quiz:hover, #submit:hover {
+    background-color: #0056b3;
+}
+
+.quiz-container .question {
+    margin: 20px 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.quiz-container .answers {
+    list-style: none;
+    padding: 0;
+}
+
+.quiz-container .answers li {
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.quiz-container .answers li:hover {
+    background-color: #e9e9e9;
+}
+
+.quiz-container .answers li.selected {
+    background-color: #d0e9ff;
+}
+
+.quiz-container #results {
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+#timer {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.zigzag-pattern {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background-image: 
+        linear-gradient(135deg, transparent 15px, #f39c12 15px, #f39c12 20px, transparent 20px),
+        linear-gradient(225deg, transparent 15px, #f39c12 15px, #f39c12 20px, transparent 20px);
+    background-size: 30px 30px;
+    top: 0;
+    left: 0;
+}
